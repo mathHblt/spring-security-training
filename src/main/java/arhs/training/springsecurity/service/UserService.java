@@ -28,6 +28,7 @@ public class UserService {
         user.setLastName(signUpFormRequestDTO.getLastName());
         user.setFirstName(signUpFormRequestDTO.getFirstName());
         user.setPassword(signUpFormRequestDTO.getPassword());
+        user.setRole("USER");
         userRepository.save(user);
     }
 
