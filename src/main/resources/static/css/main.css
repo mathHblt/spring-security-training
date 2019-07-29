@@ -55,8 +55,8 @@ h6 {
 }
 
 header.masthead {
-    padding-top: calc(7rem + 72px);
-    padding-bottom: 7rem;
+    padding-top: calc(4rem + 72px);
+    padding-bottom: 4rem;
     background: -webkit-gradient(linear, left bottom, left top, from(#ad1010), to(#d22479));
 }
 
@@ -75,8 +75,8 @@ header.masthead .masthead-content .masthead-subheading {
 
 @media (min-width: 992px) {
     header.masthead {
-        padding-top: calc(10rem + 55px);
-        padding-bottom: 10rem;
+        padding-top: calc(6rem + 55px);
+        padding-bottom: 6rem;
     }
 
     header.masthead .masthead-content .masthead-heading {
@@ -122,10 +122,37 @@ header.masthead .masthead-content .masthead-subheading {
     box-shadow: 0 0 0 0.2rem rgba(255, 106, 0, 0.5);
 }
 
-.circle-one {
-    background: radial-gradient(circle at center, #bdbdbd 0, white, #ffffff 100%);
+
+header.common-header {
+    padding-top: calc(3rem + 72px);
+    padding-bottom: 3rem;
+    background: -webkit-gradient(linear, left bottom, left top, from(#ad1010), to(#d22479));
 }
 
-.circle-two {
-    background: radial-gradient(circle at center, #f6acac 0, white, #fffefe 130%);
+header.common-header .common-header-content  {
+    z-index: 1;
+    position: relative;
+}
+
+header.common-header .common-header-content .common-header-heading {
+    font-size: 2rem;
+}
+
+header.common-header .common-header-content .common-header-subheading {
+    font-size: 1rem;
+}
+
+@media (min-width: 992px) {
+    header.common-header {
+        padding-top: calc(6rem + 55px);
+        padding-bottom: 6rem;
+    }
+
+    header.common-header .common-header-content .common-header-heading {
+        font-size: 4rem;
+    }
+
+    header.common-header .common-header-content .common-header-subheading {
+        font-size: 2rem;
+    }
 }
