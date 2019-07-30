@@ -1,13 +1,7 @@
 package arhs.training.springsecurity;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import arhs.training.springsecurity.domain.User;
-import arhs.training.springsecurity.repository.UserRepository;
 
 @SpringBootApplication
 public class SpringsecurityApplication {
@@ -16,7 +10,7 @@ public class SpringsecurityApplication {
         SpringApplication.run(SpringsecurityApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     public CommandLineRunner demo(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return (args) -> {
             User adminUser = new User();
@@ -28,5 +22,5 @@ public class SpringsecurityApplication {
             adminUser.setPermission("READ_WRITE");
             userRepository.save(adminUser);
         };
-    }
+    }*/
 }
