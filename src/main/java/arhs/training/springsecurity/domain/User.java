@@ -30,5 +30,7 @@ public class User {
     private String password;
     @Column(name = "ROLE", nullable = false)
     private String role;
+    @Column(name = "PERMISSION", nullable = false)
+    private String permission;
 
 }

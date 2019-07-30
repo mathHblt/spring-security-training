@@ -25,6 +25,7 @@ public class SpringsecurityApplication {
             adminUser.setLastName("Doe");
             adminUser.setPassword(passwordEncoder.encode("password"));
             adminUser.setRole("ROLE_ADMIN");
+            adminUser.setPermission("READ_WRITE");
             userRepository.save(adminUser);
         };
     }

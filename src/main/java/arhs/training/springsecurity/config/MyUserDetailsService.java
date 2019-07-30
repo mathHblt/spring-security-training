@@ -39,14 +39,21 @@ public class MyUserDetailsService implements UserDetailsService {
                 (user.getEmail(),
                  user.getPassword(), enabled, accountNonExpired,
                  credentialsNonExpired, accountNonLocked,
-                 getAuthorities(Arrays.asList(user.getRole()))
+                 getAuthorities(user)
                 );
     }
 
-    private static List<GrantedAuthority> getAuthorities(List<String> roles) {
+    private static List<GrantedAuthority> getAuthorities(User user) {
         List<GrantedAuthority> authorities = new ArrayList<>();
+
+        List<String> roles = Arrays.asList(user.getRole());
+        List<String> permissions = Arrays.asList(user.getPermission());
+
         for(String role : roles) {
             authorities.add(new SimpleGrantedAuthority(role));
+        }
+        for(String permission : permissions) {
+            authorities.add(new SimpleGrantedAuthority(permission));
         }
         return authorities;
     }

@@ -33,6 +33,7 @@ public class UserService {
         user.setFirstName(signUpFormRequestDTO.getFirstName());
         user.setPassword(passwordEncoder.encode(signUpFormRequestDTO.getPassword()));
         user.setRole("ROLE_USER");
+        user.setPermission("READ");
         userRepository.save(user);
     }
 
