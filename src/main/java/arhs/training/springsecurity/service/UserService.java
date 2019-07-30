@@ -3,6 +3,7 @@ package arhs.training.springsecurity.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import arhs.training.springsecurity.domain.User;
@@ -15,9 +16,12 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    private final PasswordEncoder passwordEncoder;
+
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -27,8 +31,8 @@ public class UserService {
         user.setEmail(signUpFormRequestDTO.getEmail());
         user.setLastName(signUpFormRequestDTO.getLastName());
         user.setFirstName(signUpFormRequestDTO.getFirstName());
-        user.setPassword(signUpFormRequestDTO.getPassword());
-        user.setRole("USER");
+        user.setPassword(passwordEncoder.encode(signUpFormRequestDTO.getPassword()));
+        user.setRole("ROLE_USER");
         userRepository.save(user);
     }
 
